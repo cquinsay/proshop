@@ -1,0 +1,23 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cquinsay/proshop.git"
+  },
+  "keywords": [],
+  "author": "Charity Quinsay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cquinsay/proshop/issues"
+  },
+  "homepage": "https://github.com/cquinsay/proshop#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
