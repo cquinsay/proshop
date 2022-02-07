@@ -1,6 +1,6 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
-const router = express.Router()
+const router = express.Router();
 import Product from '../models/productModel.js';
 
 
@@ -9,8 +9,7 @@ import Product from '../models/productModel.js';
 // @route   GET api/products
 // @access  Public
 router.get('/', asyncHandler(async (req, res) => {
-    const products = await Product.find({})
-
+    const products = await Product.find({});
 
     res.json(products)
 
