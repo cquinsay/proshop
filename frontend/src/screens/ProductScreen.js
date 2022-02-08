@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
 import Rating from '../components/Rating';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listProductDetails } from '../actions/productActions';
+import { useNavigate } from 'react-router';
 
 
 
 
-const ProductScreen = ({ match }) => {
-	const [qty, setQty] = useState(0)
+const ProductScreen = ({ history, match }) => {
+	const [qty, setQty] = useState(1)
+
 	const dispatch = useDispatch()
+
+	const navigate = useNavigate();
 
 	const productDetails = useSelector(state => state.productDetails)
 	const { loading, error, product } = productDetails
@@ -23,6 +27,11 @@ const ProductScreen = ({ match }) => {
 		dispatch(listProductDetails(id))
 
 	}, [dispatch, id])
+
+	const addToCartHandler = () => {
+		navigate(`/cart/${id}?qty=${qty}`)
+
+	}
 
 
 	return <>
@@ -93,7 +102,7 @@ const ProductScreen = ({ match }) => {
 								</ListGroup.Item>
 							)}
 							<ListGroup.Item>
-								<Button className='btn-block' type='button' disabled={product.countInStock === 0}>
+								<Button onClick={addToCartHandler} className='btn-block' type='button' disabled={product.countInStock === 0}>
 									Add To Cart
 								</Button>
 							</ListGroup.Item>
