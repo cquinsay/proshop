@@ -34,7 +34,7 @@ const CartScreen = ({ match, history }) => {
   }
 
   const checkOutHandler = () => {
-    navigate('/login?redirect=shipping')
+    navigate('/login?redirect=/shipping')
   }
 
 
@@ -95,12 +95,7 @@ const CartScreen = ({ match, history }) => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
-
     </Col>
-    <Col md={2}>
-
-    </Col>
-
   </Row>;
 };
 
