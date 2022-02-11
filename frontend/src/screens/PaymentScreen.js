@@ -9,9 +9,9 @@ import CheckoutSteps from '../components/CheckoutSteps';
 
 
 
-const PaymentScreen = ({ history }) => {
+const PaymentScreen = () => {
   const navigate = useNavigate();
-  const cart = useSelector(state => state.cart)
+  const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
   if (!shippingAddress) {
