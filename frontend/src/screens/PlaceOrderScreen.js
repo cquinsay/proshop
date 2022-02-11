@@ -11,9 +11,9 @@ const PlaceOrderScreen = () => {
   const navigate = useNavigate()
   const cart = useSelector(state => state.cart)
 
-  // CALCULATE PRICES
+  // CALCULATE PRICESp
   const addDecimals = (num) => {
-    return (Math.round(num * 100) / 100).toFixed(2)
+    return (Math.round(num * 100) / 100).toFixped(2)
   }
 
   cart.itemsPrice = addDecimals(cart.cartItems.reduce(
@@ -21,7 +21,7 @@ const PlaceOrderScreen = () => {
     0
   ))
   cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 10)
-  cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
+  cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice)))
   cart.totalPrice = addDecimals(Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice))
 
   const orderCreate = useSelector(state => state.orderCreate)
@@ -132,11 +132,11 @@ const PlaceOrderScreen = () => {
               <Button type='button' className='btn-block' disabled={cart.cartItems === 0} onClick={placeOrderHandler}>Place Order</Button>
             </ListGroup.Item>
 
-          </ListGroup>
-        </Card>
+          </ListGroup >
+        </Card >
 
-      </Col>
-    </Row>
+      </Col >
+    </Row >
   </>;
 };
 
