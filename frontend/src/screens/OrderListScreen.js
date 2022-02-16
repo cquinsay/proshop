@@ -32,16 +32,9 @@ const OrderListScreen = () => {
 
 
   return <>
-    <Row className='align-items-center'>
-      <Col>
-        <h1>Orders</h1>
-      </Col>
 
-    </Row>
-    {/* {loadingDelete && <Loader />}
-  {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
-  {loadingCreate && <Loader />}
-  {errorCreate && <Message variant='danger'>{errorCreate}</Message>} */}
+    <h1>Orders</h1>
+
     {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
       <Table striped bordered hover responsive className='table-sm'>
         <thead>
@@ -52,6 +45,7 @@ const OrderListScreen = () => {
             <th>TOTAL</th>
             <th>PAID</th>
             <th>DELIVERED</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
