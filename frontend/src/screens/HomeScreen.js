@@ -7,6 +7,7 @@ import Loader from '../components/Loader';
 import Paginate from '../components/Paginate';
 import { Row, Col } from 'react-bootstrap';
 import { listProducts } from '../actions/productActions';
+import ProductCarousel from '../components/ProductCarousel';
 
 
 const HomeScreen = () => {
@@ -26,6 +27,7 @@ const HomeScreen = () => {
 
 
   return <>
+    {!keyword && <ProductCarousel />}
     <h1>Latest Products</h1>
     {loading ? (
       <Loader />
