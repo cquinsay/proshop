@@ -85,7 +85,7 @@ const OrderScreen = (id) => {
 
   return loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
     <>
-      <h1>Order {order._id} </h1>
+      <h1>Order# {order._id} </h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
